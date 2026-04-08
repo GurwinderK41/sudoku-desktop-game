@@ -258,4 +258,10 @@ public class SudokuBoardTest {
         assertFalse(sudokuBoard.equals(clonedBoard));
         assertNotEquals(sudokuBoard.hashCode(), clonedBoard.hashCode());
     }
+
+    @Test                                                                                                                             
+    void testCheckEndGame_emptyBoard() throws FillingBoardSudokuException {
+        SudokuBoard board = new SudokuBoard(new BacktrackingSudokuSolver());                                                          
+        assertFalse(board.checkEndGame(), "Empty board should not be a completed game");
+    }
 }
